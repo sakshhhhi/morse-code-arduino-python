@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" width="760" height="400" font-family="Arial, Helvetica, sans-serif">
+  <rect width="760" height="400" fill="#ffffff"/>
+  <text x="380" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#111">Morse Code LED Circuit - Arduino UNO</text>
+
+  <!-- Arduino board -->
+  <rect x="40" y="60" width="180" height="250" rx="10" fill="#e6f2f5" stroke="#00717a" stroke-width="3"/>
+  <text x="130" y="95" text-anchor="middle" font-size="18" font-weight="bold" fill="#00717a">Arduino UNO</text>
+  <text x="130" y="116" text-anchor="middle" font-size="12" fill="#00717a">ATmega328P</text>
+  <rect x="40" y="170" width="26" height="50" fill="#b8c4c8" stroke="#555" stroke-width="1.5"/>
+  <text x="53" y="238" text-anchor="middle" font-size="11" fill="#333">USB</text>
+
+  <!-- Pin 8 -->
+  <circle cx="220" cy="130" r="5" fill="#d62828"/>
+  <text x="208" y="134" text-anchor="end" font-size="13" font-weight="bold" fill="#222">Pin 8</text>
+  <!-- GND -->
+  <circle cx="220" cy="270" r="5" fill="#222"/>
+  <text x="208" y="274" text-anchor="end" font-size="13" font-weight="bold" fill="#222">GND</text>
+
+  <!-- Wire: Pin 8 to LED anode -->
+  <path d="M220 130 H330" stroke="#d62828" stroke-width="3" fill="none"/>
+
+  <!-- LED symbol -->
+  <polygon points="330,108 330,152 375,130" fill="#ffe3e3" stroke="#222" stroke-width="3"/>
+  <line x1="375" y1="106" x2="375" y2="154" stroke="#222" stroke-width="3"/>
+  <!-- light arrows -->
+  <g stroke="#e08a00" stroke-width="2" fill="none">
+    <line x1="352" y1="100" x2="368" y2="82"/><polyline points="360,82 368,82 368,90"/>
+    <line x1="366" y1="104" x2="382" y2="86"/><polyline points="374,86 382,86 382,94"/>
+  </g>
+  <text x="352" y="72" text-anchor="middle" font-size="13" font-weight="bold" fill="#222">LED</text>
+  <text x="330" y="178" text-anchor="middle" font-size="11" fill="#444">Anode (+)</text>
+  <text x="330" y="192" text-anchor="middle" font-size="11" fill="#444">long leg</text>
+  <text x="378" y="178" text-anchor="start" font-size="11" fill="#444">Cathode (-)</text>
+  <text x="378" y="192" text-anchor="start" font-size="11" fill="#444">short leg</text>
+
+  <!-- Wire: LED cathode to resistor -->
+  <path d="M375 130 H440" stroke="#222" stroke-width="3" fill="none"/>
+
+  <!-- Resistor -->
+  <polyline points="440,130 452,130 460,112 476,148 492,112 508,148 524,112 532,130 544,130" stroke="#222" stroke-width="3" fill="none" stroke-linejoin="round"/>
+  <text x="492" y="96" text-anchor="middle" font-size="13" font-weight="bold" fill="#222">220 ohm</text>
+
+  <!-- Wire: resistor down and back to GND -->
+  <path d="M544 130 H620 V270 H220" stroke="#222" stroke-width="3" fill="none" stroke-linejoin="round"/>
+
+  <!-- Current flow arrow -->
+  <path d="M250 110 H300" stroke="#d62828" stroke-width="2" fill="none"/>
+  <polygon points="300,105 310,110 300,115" fill="#d62828"/>
+  <text x="280" y="102" text-anchor="middle" font-size="11" fill="#d62828">I ~ 13.6 mA</text>
+
+  <!-- Series path label -->
+  <text x="420" y="300" text-anchor="middle" font-size="14" font-weight="bold" fill="#111">Pin 8 -> LED (+) -> LED (-) -> 220 ohm -> GND</text>
+
+  <!-- Calc box -->
+  <rect x="250" y="316" width="420" height="64" rx="8" fill="#f6f6f6" stroke="#bbb" stroke-width="1.5"/>
+  <text x="460" y="337" text-anchor="middle" font-size="12" fill="#222">Pin HIGH = 5V, LED drop (Vf) ~ 2V, so resistor drops 3V</text>
+  <text x="460" y="356" text-anchor="middle" font-size="12" fill="#222">I = V / R = 3V / 220 ohm ~ 13.6 mA (safe for LED and pin)</text>
+  <text x="460" y="373" text-anchor="middle" font-size="11" fill="#666">Serial: PC (Python GUI) -> USB -> Arduino, 9600 baud</text>
+</svg>
